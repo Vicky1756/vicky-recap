@@ -1,5 +1,5 @@
 import React from "react";
-import gifImage from "../../Assets/wed.gif";
+import gifImage from "../../Assets/vinyl.gif";
 import "./Home.css";
 import { Container, Row, Col } from "react-bootstrap";
 import About from "../About/About";

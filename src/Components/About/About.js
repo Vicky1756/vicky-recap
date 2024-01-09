@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import video from "../../Assets/video.mp4";
 import "./About.css";
 function About() {
   return (
@@ -18,10 +17,6 @@ function About() {
               About me
             </h1>
           </Col>
-          <video width="640" height="360" controls >
-            <source src={video} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
           <Col></Col>
         </Row>
       </Container>

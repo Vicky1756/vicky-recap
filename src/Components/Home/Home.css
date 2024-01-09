@@ -1,18 +1,18 @@
 .gif-img {
-  width: 400px;
-  height: 400px;
+  width: 600px;
+  height: 600px;
   margin-left: -40px;
 }
 
 .home-section {
   z-index: -1;
-  background-color: #fff;
+  background-color: #000;
   height: 100vh;
 }
 
 .home-content {
   font-family: georgia, serif;
-  color: #381704;
+  color: #ffffff;
   font-size: 20px;
   letter-spacing: 0.1em;
   line-height: 200%;
