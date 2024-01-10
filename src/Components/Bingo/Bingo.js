@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import "./Bingo.css";
+import Catimg from "../../Assets/cat.gif";
+import FlowerImg from "../../Assets/flower.jpeg";
 const SQUARE_NAMES = [
   "Open floorplan",
   "Take down a wall",
@@ -37,7 +39,7 @@ function Bingo() {
   const [showSecondPopup, setShowSecondPopup] = React.useState(false);
 
   useEffect(() => {
-    const intervalId = setInterval(moveButton, 1000); 
+    const intervalId = setInterval(moveButton, 1000);
 
     return () => clearInterval(intervalId);
   }, []);
@@ -83,7 +85,6 @@ function Bingo() {
 
     const winLines = hasBingo(updatedSquares);
     if (winLines.length > 0) {
-      // Show pop-up when win condition is met
       togglePopup();
       winLines.forEach((line) => {
         line.forEach((j) => {
@@ -113,13 +114,13 @@ function Bingo() {
     setSquares(newSquares);
   }
   function togglePopup() {
-  if (!showSecondPopup) {
-    setShowPopup(!showPopup);
-  } else {
-    setShowPopup(false);
-    setShowSecondPopup(false);
+    if (!showSecondPopup) {
+      setShowPopup(!showPopup);
+    } else {
+      setShowPopup(false);
+      setShowSecondPopup(false);
+    }
   }
-}
 
   return (
     <div className="card clearfix">
@@ -131,17 +132,19 @@ function Bingo() {
       <div className={`popup ${showPopup ? "visible" : ""}`} id="popup">
         <div className="popup-inner">
           <div className="popup__text">
-            <h1>Do you wanna go out with me huhu</h1>
+            
+            <h3>Do you wanna go out with me huhu</h3>
+            <img src={FlowerImg} alt="" className="flower-img" />
           </div>
-          <div className="buttons">
+          <div className="pop-buttons">
             <button
-              className="btn"
+              className="pop"
               id="yesButton"
               onClick={() => setShowSecondPopup(true)}
             >
               Yes
             </button>
-            <button className="btn" id="noButton" onClick={togglePopup}>
+            <button className="pop-btn" id="noButton" onClick={togglePopup}>
               No
             </button>
           </div>
@@ -153,7 +156,12 @@ function Bingo() {
       <div className={`popup ${showSecondPopup ? "visible" : ""}`} id="popup2">
         <div className="popup-inner">
           <div className="popup__text">
-            <h1>Second Popup Text</h1>
+            <img
+              src={Catimg}
+              alt=""
+              className="cat-img"
+
+            />
           </div>
           <button className="popup__close" onClick={togglePopup}>
             X
@@ -165,7 +173,6 @@ function Bingo() {
 }
 
 export default Bingo;
-
 
 function moveButton() {
   var button = document.getElementById("noButton");
