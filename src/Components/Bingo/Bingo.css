@@ -156,8 +156,9 @@ body {
 }
 
 .pop-btn {
-    background-color: #FFB6C1;
+    background-color: #e27081;
     color: white;
+    border-color: #0a0a0a;
     padding: 15px 32px;
     text-align: center;
     display: inline-block;
@@ -170,7 +171,7 @@ body {
 }
 
 .pop-btn:hover {
-    background-color: #FAF9F6;
+    background-color:#8f2535;
 }
 
 #popup2 {

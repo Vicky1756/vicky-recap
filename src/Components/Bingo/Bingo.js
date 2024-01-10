@@ -138,7 +138,7 @@ function Bingo() {
           </div>
           <div className="pop-buttons">
             <button
-              className="pop"
+              className="pop-btn"
               id="yesButton"
               onClick={() => setShowSecondPopup(true)}
             >
