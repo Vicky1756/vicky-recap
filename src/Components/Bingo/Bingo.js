@@ -148,9 +148,6 @@ function Bingo() {
               No
             </button>
           </div>
-          <button className="popup__close" onClick={togglePopup}>
-            X
-          </button>
         </div>
       </div>
       <div className={`popup ${showSecondPopup ? "visible" : ""}`} id="popup2">
