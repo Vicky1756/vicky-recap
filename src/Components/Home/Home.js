@@ -19,7 +19,7 @@ function Home() {
         </Container>
       </Container>
       <Bingo/>
-      <About />
+      <About/>
     </section>
   );
 }
