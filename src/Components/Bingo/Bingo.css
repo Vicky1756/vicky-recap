@@ -132,3 +132,124 @@ body {
         padding: 0 25px;
     }
 }
+
+#noButton {
+    position: absolute;
+    margin-left: 150px;
+    transition: 0.5s;
+}
+
+#yesButton {
+    position: absolute;
+    margin-right: 150px;
+
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 20px;
+    /* optional: adds some space between the buttons */
+}
+
+.btn {
+    background-color: #FFB6C1;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #FAF9F6;
+}
+
+#popup2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 2;
+    visibility: hidden;
+    opacity: 0;
+    overflow: hidden;
+    transition: 0.64s ease-in-out;
+  }
+  
+  #popup2 .popup-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 80%;
+    max-height: 80%;
+    padding: 20px;
+    background-color: #fff;
+    transform: rotate(32deg);
+    transition: 0.64s ease-in-out;
+  }
+  
+  #popup2 .pop-img {
+    width: 80%;
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  #popup2 .popup__text {
+    text-align: center;
+  }
+  
+  #popup2 .popup__text h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #0a0a0a;
+    margin-bottom: 10px;
+  }
+  
+  #popup2 .popup__text p {
+    font-size: 0.875rem;
+    color: #686868;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  #popup2.visible {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  #popup2.visible .popup-inner {
+    transform: rotate(0);
+  }
+  
+  #popup2 .popup__close {
+    position: absolute;
+    right: -1rem;
+    top: -1rem;
+    width: 3rem;
+    height: 3rem;
+    font-size: 0.875rem;
+    font-weight: 300;
+    border-radius: 100%;
+    background-color: #0a0a0a;
+    z-index: 4;
+    color: #fff;
+    line-height: 3rem;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+  }

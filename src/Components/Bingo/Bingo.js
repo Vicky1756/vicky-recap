@@ -1,46 +1,58 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Bingo.css";
 const SQUARE_NAMES = [
-  'Open floorplan',
-  'Take down a wall',
-  'Curb appeal',
-  'Crown molding',
-  'Farmhouse sink',
-  'Farmhouse chandelier',
-  'Rustic charm',
-  'Add island to kitchen',
-  'Chip breaks something',
-  'Basket of crayons',
+  "Open floorplan",
+  "Take down a wall",
+  "Curb appeal",
+  "Crown molding",
+  "Farmhouse sink",
+  "Farmhouse chandelier",
+  "Rustic charm",
+  "Add island to kitchen",
+  "Chip breaks something",
+  "Basket of crayons",
   'Something is an "easy fix"',
-  'Load-bearing wall',
-  'Double vanity',
-  'Natural light',
-  'Shiplap',
-  'Backsplash',
-  'Recessed lighting',
-  'Buyers get house for under list',
-  'Inspirational sign',
-  'Babies',
-  'Breakfast nook',
-  'Built-ins',
-  'Giant clock',
+  "Load-bearing wall",
+  "Double vanity",
+  "Natural light",
+  "Shiplap",
+  "Backsplash",
+  "Recessed lighting",
+  "Buyers get house for under list",
+  "Inspirational sign",
+  "Babies",
+  "Breakfast nook",
+  "Built-ins",
+  "Giant clock",
   'Talk about Chip"s glory days',
-  'Unexpected expense',
-  'Clint builds something',
-  'Visit to the Farmhouse',
-  'White cabinets'
+  "Unexpected expense",
+  "Clint builds something",
+  "Visit to the Farmhouse",
+  "White cabinets",
 ];
 
 function Bingo() {
   const [squares, setSquares] = React.useState(getSquares);
+  const [showPopup, setShowPopup] = React.useState(false);
+  const [showSecondPopup, setShowSecondPopup] = React.useState(false);
 
+  useEffect(() => {
+    const intervalId = setInterval(moveButton, 1000); 
+
+    return () => clearInterval(intervalId);
+  }, []);
   function getSquares() {
     if (window.localStorage) {
-      const savedGame = JSON.parse(window.localStorage.getItem('fixerUpperBingo'));
+      const savedGame = JSON.parse(
+        window.localStorage.getItem("fixerUpperBingo")
+      );
       if (savedGame) return savedGame;
       else {
         const newSquares = createNewSquares();
-        window.localStorage.setItem('fixerUpperBingo', JSON.stringify(newSquares));
+        window.localStorage.setItem(
+          "fixerUpperBingo",
+          JSON.stringify(newSquares)
+        );
         return newSquares;
       }
     } else {
@@ -54,22 +66,27 @@ function Bingo() {
     for (let i = 0; i < 25; i++) {
       sq.push({ stamped: false, text: text[i], win: false });
     }
-    sq[12].text = 'Free Space';
+    sq[12].text = "Free Space";
     sq[12].stamped = true;
     return sq;
   }
 
   function handleClick(i) {
     const updatedSquares = [...squares];
-    updatedSquares[i] = { ...updatedSquares[i], stamped: !updatedSquares[i].stamped };
-    updatedSquares.forEach(square => {
+    updatedSquares[i] = {
+      ...updatedSquares[i],
+      stamped: !updatedSquares[i].stamped,
+    };
+    updatedSquares.forEach((square) => {
       square.win = false;
     });
 
     const winLines = hasBingo(updatedSquares);
     if (winLines.length > 0) {
-      winLines.forEach(line => {
-        line.forEach(j => {
+      // Show pop-up when win condition is met
+      togglePopup();
+      winLines.forEach((line) => {
+        line.forEach((j) => {
           updatedSquares[j].win = true;
         });
       });
@@ -78,17 +95,31 @@ function Bingo() {
     setSquares(updatedSquares);
 
     if (window.localStorage) {
-      window.localStorage.setItem('fixerUpperBingo', JSON.stringify(updatedSquares));
+      window.localStorage.setItem(
+        "fixerUpperBingo",
+        JSON.stringify(updatedSquares)
+      );
     }
   }
 
   function newGame() {
     const newSquares = createNewSquares();
     if (window.localStorage) {
-      window.localStorage.setItem('fixerUpperBingo', JSON.stringify(newSquares))
+      window.localStorage.setItem(
+        "fixerUpperBingo",
+        JSON.stringify(newSquares)
+      );
     }
     setSquares(newSquares);
   }
+  function togglePopup() {
+  if (!showSecondPopup) {
+    setShowPopup(!showPopup);
+  } else {
+    setShowPopup(false);
+    setShowSecondPopup(false);
+  }
+}
 
   return (
     <div className="card clearfix">
@@ -97,15 +128,62 @@ function Bingo() {
       <button className="new-game" onClick={newGame}>
         New Card
       </button>
+      <div className={`popup ${showPopup ? "visible" : ""}`} id="popup">
+        <div className="popup-inner">
+          <div className="popup__text">
+            <h1>Do you wanna go out with me huhu</h1>
+          </div>
+          <div className="buttons">
+            <button
+              className="btn"
+              id="yesButton"
+              onClick={() => setShowSecondPopup(true)}
+            >
+              Yes
+            </button>
+            <button className="btn" id="noButton" onClick={togglePopup}>
+              No
+            </button>
+          </div>
+          <button className="popup__close" onClick={togglePopup}>
+            X
+          </button>
+        </div>
+      </div>
+      <div className={`popup ${showSecondPopup ? "visible" : ""}`} id="popup2">
+        <div className="popup-inner">
+          <div className="popup__text">
+            <h1>Second Popup Text</h1>
+          </div>
+          <button className="popup__close" onClick={togglePopup}>
+            X
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
+
 export default Bingo;
 
+
+function moveButton() {
+  var button = document.getElementById("noButton");
+  var x = Math.random() * (window.innerWidth - button.offsetWidth);
+  var y = Math.random() * (window.innerHeight - button.offsetHeight);
+
+  x = Math.max(0, x);
+  y = Math.max(0, y);
+
+  button.style.left = `${x}px`;
+  button.style.top = `${y}px`;
+}
 function Square(props) {
   return (
     <button
-      className={`square ${props.value.stamped ? 'stamped' : ''} ${props.value.win ? 'win' : ''}`}
+      className={`square ${props.value.stamped ? "stamped" : ""} ${
+        props.value.win ? "win" : ""
+      }`}
       onClick={props.onClick}
     >
       {props.value.text}
@@ -116,7 +194,11 @@ function Square(props) {
 function Board(props) {
   const renderSquare = (i) => {
     return (
-      <Square value={props.squares[i]} onClick={() => props.onClick(i)} key={i} />
+      <Square
+        value={props.squares[i]}
+        onClick={() => props.onClick(i)}
+        key={i}
+      />
     );
   };
 
@@ -126,12 +208,14 @@ function Board(props) {
     for (let j = 0; j < 5; j++) {
       row.push(renderSquare(j + i * 5));
     }
-    board.push(<div key={i} className="board-row">{row}</div>);
+    board.push(
+      <div key={i} className="board-row">
+        {row}
+      </div>
+    );
   }
 
-  return (
-    <div className="board">{board}</div>
-  );
+  return <div className="board">{board}</div>;
 }
 
 // Helpers
@@ -151,11 +235,12 @@ function hasBingo(squares) {
     [3, 8, 13, 18, 23],
     [4, 9, 14, 19, 24],
     [0, 6, 12, 18, 24],
-    [4, 8, 12, 16, 20]
+    [4, 8, 12, 16, 20],
   ];
-  
-  return lines.filter(function(line) {
-    return line.every(function(l) { return squares[l].stamped; });
+
+  return lines.filter(function (line) {
+    return line.every(function (l) {
+      return squares[l].stamped;
+    });
   });
 }
-
