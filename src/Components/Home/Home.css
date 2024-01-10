@@ -10,7 +10,9 @@
   background-color: #000;
   height: 100vh;
 }
-
+.home-heading{
+  font-family: bobFont;
+}
 .home-content {
   font-family: georgia, serif;
   color: #ffffff;

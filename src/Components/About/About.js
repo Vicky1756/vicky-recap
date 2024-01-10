@@ -62,20 +62,7 @@ function About() {
           a home in their heart.
         </p>
       </div>
-      <div className="iframe-container">
-        {" "}
-        <iframe
-          title="Embedded Spotify Track"
-          className="iframe-style"
-          src="https://open.spotify.com/embed/track/7GVUmCP00eSsqc4tzj1sDD?utm_source=generator"
-          width="50%"
-          height="352"
-          frameBorder="0"
-          allowFullScreen=""
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy"
-        ></iframe>
-        <div className="ball-content">
+      <div className="ball-content">
         <div className="ball-heading">
           <h1>Seeking Advice?</h1>
           <h3>Click the Magic 8 Ball now!</h3>
@@ -92,6 +79,19 @@ function About() {
           </div>
         </div>
       </div>
+     <div className="iframe-container">
+        {" "}
+        <iframe
+          title="Embedded Spotify Track"
+          className="iframe-style"
+          src="https://open.spotify.com/embed/track/7GVUmCP00eSsqc4tzj1sDD?utm_source=generator"
+          height="60%"
+          width="452"
+          frameBorder="0"
+          allowFullScreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe>
       </div>
     </div>
   );

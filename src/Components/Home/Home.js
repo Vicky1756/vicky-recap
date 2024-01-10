@@ -43,7 +43,7 @@ function Home() {
 
           <Row>
             <Col md={7} className="home-header">
-              <h1 className="heading">2023 HIGHLIGHTS</h1>
+              <h1 className="home-heading">MASSAGE FROM PROPHET BOG</h1>
             </Col>
           </Row>
         </Container>
