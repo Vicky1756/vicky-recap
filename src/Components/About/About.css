@@ -57,6 +57,32 @@
     border-radius: 12px;
     flex: 1; 
     margin-left: 70px;
-    margin-top: 70px;
+    margin-top: 120px;
+    margin-right: 180px;
   }
-  
+  @import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
+
+  .ball-content {
+    color: #333;
+    font-family: 'Gloria Hallelujah', cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Ensure it takes up the full height */
+  }
+
+.ball-heading {
+  text-align: center;
+}
+
+.magic8Ball img {
+  display: block;
+  margin: 0 auto;
+}
+
+.magic8ballMessage {
+  padding-top: 15px;
+  text-align: center;  
+  font-size: 20px;
+}
