@@ -1,11 +1,12 @@
 .gif-img {
   width: 600px;
   height: 600px;
-  margin-left: -40px;
+  position: center;
+
 }
 
 .home-section {
-  z-index: -1;
+  z-index: -2;
   background-color: #000;
   height: 100vh;
 }
@@ -17,4 +18,54 @@
   letter-spacing: 0.1em;
   line-height: 200%;
   padding-top: 11px;
+}
+
+.img_container {
+  width: 600px;
+  height: 600px;
+  z-index: 1;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.buttonHome {
+  color: #FFF;
+  position: absolute;
+  width: 100px;
+  height: 30px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  font-size: 16px;
+  display: inline-block;
+  border: none;
+  outline: none;
+  background: #FFF;
+  border-radius: 3px;
+  border: 1px solid #1F1F1F;
+  box-shadow: 0 1px 3px 0px rgba(15, 15, 15, 0.5),
+    inset 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.buttonDark {
+  background: linear-gradient(#737373, #333333);
+  background-size: auto 150%;
+  background-position: 0 100%;
+  height: 4em;
+  width: 4em;
+  border-radius: 100%;
+}
+
+.buttonDark:hover {
+  background-position: 0 50%;
+}
+
+.buttonDark:active {
+  color: #000;
+  background-position: 0 50%;
+  background: #333333;
+  box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.5), 0 1px 1px rgba(255, 255, 255, 0.1);
 }

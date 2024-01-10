@@ -2,6 +2,7 @@
 import Home from "./Components/Home/Home";
 import About from "./Components/About/About";
 import Bingo from "./Components/Bingo/Bingo";
+import Card from "./Components/Card/Card";
 import Preloader from "./Components/pre";
 import React, { useState, useEffect } from "react";
 import {
@@ -29,6 +30,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/bingo" element={<Bingo />} />
+          <Route path="/card" element={<Card/>} />
         </Routes>
       </div>
     </Router>
