@@ -13,7 +13,7 @@ function About() {
               paddingBottom: "50px",
             }}
           >
-            <h1 style={{ fontSize: "3.1em", paddingBottom: "20px" }}>
+            <h1 className="About-content">
               About me
             </h1>
           </Col>
