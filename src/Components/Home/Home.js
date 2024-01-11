@@ -5,6 +5,7 @@ import "./Home.css";
 import { Container, Row, Col } from "react-bootstrap";
 import About from "../About/About";
 import Bingo from "../Bingo/Bingo";
+import Navbar from "./Navbar/Navbar";
 
 function Home() {
   const [showPopup, setShowPopup] = useState(false);
@@ -15,6 +16,7 @@ function Home() {
 
   return (
     <section>
+       <Navbar />
       <Container fluid className="home-section" id="home">
         <Container className="home-content">
           <div className="img_container">

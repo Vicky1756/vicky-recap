@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+:root {
+  --black: #373737;
+  --sect1: #ffc023;
+  --sect2: #2196F3;
+  --sect3: #e63232;
+  --sect4: #8BC34A;
+  --sect5: #8946ff;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.navbar-body {
+  margin: 0;
+  padding: 0;
+  transition: all 0.5s ease 0s;
+  font-family: 'Varela Round', cursive;
+}
+
+.navbar-body:after {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: var(--black);
+  font-size: 1rem;
+  padding: 20px 0;
+}
+.navbar-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-100%);
+}
+header {
+  width: 100%;
+}
+
+nav {
+  z-index: 1000; 
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 65px;
+  background: linear-gradient(90deg, var(--sect1), var(--sect2), var(--sect3), var(--sect4), var(--sect5));
+  text-align: center;
+  display: flex;
+  transition: all 0.5s ease 0s;
+}
+
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 16px 10px;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  font-size: 1.6rem;
+  border: 2px solid #000;
+  border-top-width: 0px;
+  border-bottom-width: 4px;
+}
+
+nav a:first-child {
+  border-left-width: 0;
+}
+
+nav a:last-child {
+  border-right-width: 0;
+}
+
+nav a:hover {
+  /* background: linear-gradient(90deg, var(--sect1), var(--sect2), var(--sect3), var(--sect4), var(--sect5)); */
+  background: linear-gradient(90deg, var(--clr) 0 50%, var(--black) 0 100%);
+  background-size: 200%;
+  background-position: 100% 0;
+  animation: colorize 0.5s ease 0s;
+  animation-fill-mode: forwards;
+  transition: all 0.5s ease 0s;
+}
+
+@keyframes colorize {
+  100% {
+    background-position: 0 0;
+  }
+}
+
+nav a:nth-child(1):hover {
+  --clr: var(--sect1);
+}
+
+nav a:nth-child(2):hover {
+  --clr: var(--sect2);
+}
+
+nav a:nth-child(3):hover {
+  --clr: var(--sect3);
+}
+
+nav a:nth-child(4):hover {
+  --clr: var(--sect4);
+}
+
+nav a:nth-child(5):hover {
+  --clr: var(--sect5);
+}
+
+nav:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 20vw;
+  width: 20%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(90deg, var(--clr) 0 50%, var(--black) 0 100%);
+  animation: progress linear;
+  animation-timeline: scroll(root);
+}
+
+@keyframes progress {
+  100% {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 580px) {
+	nav a { font-size: 1.25rem; line-height: 2rem; }
+	.scroller:after { content: "";}
+}

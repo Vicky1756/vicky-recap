@@ -87,22 +87,19 @@ body {
     -webkit-tap-highlight-color: transparent;
 }
 
-.clearfix::before,
-.clearfix::after {
+.bingo::before,
+.bingo::after {
     content: '';
     display: table;
     clear: both;
 }
 
-/* Updated CSS */
 .new-game {
     margin: 1em 0 1em;
     background-color: #ff4f42;
     border: 2px solid #422800;
     border-radius: 15px;
-    /* Reduced border-radius */
     box-shadow: 4px 4px 0 #422800;
-    /* Modified box-shadow */
     color: #fff;
     cursor: pointer;
     display: inline-block;
@@ -122,7 +119,6 @@ body {
 
 .new-game:active {
     box-shadow: 2px 2px 0 #422800;
-    /* Adjusted box-shadow */
     transform: translate(2px, 2px);
 }
 
@@ -152,7 +148,6 @@ body {
     align-items: center;
     margin-top: 20px;
     margin-left: 20px;
-    /* optional: adds some space between the buttons */
 }
 
 .pop-btn {
@@ -183,7 +178,6 @@ body {
     height: 100vh;
     top: 0;
     left: 0;
-    /* background-color: rgba(0, 0, 0, 0.8); */
     z-index: 2;
     visibility: hidden;
     opacity: 0;

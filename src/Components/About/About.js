@@ -42,7 +42,7 @@ function About() {
   };
 
   return (
-    <div>
+    <div id="about">
       <h1 className="about-content">Letter to you</h1>
       <div className="letter">
         <h1>Dear Boom</h1>

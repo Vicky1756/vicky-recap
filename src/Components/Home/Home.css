@@ -2,9 +2,9 @@
   width: 600px;
   height: 600px;
   position: center;
+  padding-top: 100px;
 
 }
-
 .home-section {
   z-index: -2;
   background-color: #000;
@@ -19,7 +19,7 @@
   font-size: 20px;
   letter-spacing: 0.1em;
   line-height: 200%;
-  padding-top: 11px;
+  /* padding-top: 11px; */
 }
 
 .img_container {
@@ -53,6 +53,15 @@
 }
 
 .buttonDark {
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  color: #FFF;
+  font-size: 16px;
+  display: inline-block;
+  border: none;
+  outline: none;
   background: linear-gradient(#737373, #333333);
   background-size: auto 150%;
   background-position: 0 100%;

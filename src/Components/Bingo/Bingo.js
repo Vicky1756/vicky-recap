@@ -123,7 +123,7 @@ function Bingo() {
   }
 
   return (
-    <div className="card clearfix">
+    <div className="bingo" id="bingo">
       <h1 className="board-heading">2023 BINGO</h1>
       <Board squares={squares} onClick={(i) => handleClick(i)} />
       <button className="new-game" onClick={newGame}>
