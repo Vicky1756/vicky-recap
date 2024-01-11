@@ -7,27 +7,26 @@ function About() {
 
   const displayMessage = () => {
     const messages = [
-      "Nope. Not worth it.",
-      "Yes! This will happen!",
-      "Are you sure you want to do this?",
-      "I see troubles ahead. Beware!",
-      "I see a dark void inside your head. You should get that fixed.",
-      "I wouldn't bother if I were you.",
-      "So... much... haze... try again later.",
-      "You can but I wouldn't.",
-      "Let me crack open this fortune cookie first... your lucky number is 8!",
-      "Poke me like that again and your future will be very grim!",
-      "I see nothing... oh wait! Never buy a pigeon.",
-      "This will end poorly for you.",
-      "Your heart will break. Sorry.",
-      "A fool and his money will soon be parted. Leave $10 and go away.",
-      "I'd predicate something nice for you but let's be reasonable.",
-      "I can but you shouldn't.",
-      "This is your lucky day! Do it!",
-      "I feel an energy buzzing about you. This is your day!",
+      "You will discover the true meaning of 'Netflix and chill',spoiler alert: it involves lots of snacks.",
+      "Beware of overly enthusiastic squirrels. They might be plotting against your stash of nuts.",
+      "In the quest for happiness, remember: a pizza a day keeps the grumpiness away.",
+      "Your laundry will develop magical powers and learn to fold itself. Just kidding, invest in a good folding technique instead.",
+      "A wise man once said nothing at all. Be that wise person during your next family gathering.",
+      "You will be granted the ability to find missing socks. Unfortunately, it won't extend to finding your car keys.",
+      "Buckle up! Your next adventure involves singing in the shower. Your shampoo bottle is your biggest fan.",
+      "Avoid taking life too seriously. Remember, even the mighty oak was once a nut.",
+      "You're about to become the world champion of parallel parking. Get ready for applause from confused pedestrians.",
+      "Embrace your inner child. Play with Lego, build a fort, and blame it on nostalgia when someone questions your choices.",
+      "Good news: Your phone battery will last forever. Bad news: You'll still manage to misplace it daily.",
+      "You will gain the superpower of turning red lights green by staring at them intensely. Use it wisely, or cause traffic chaos!",
+      "Expect the unexpected. Like finding a pen that actually works on the first try.",
+      "Your talent for making perfect microwave popcorn will make you the envy of movie nights everywhere.",
+      "Beware of falling coconuts. They're nature's way of testing your dodgeball skills.",
+      "Your love life is like a pizza delivery.it might take longer than expected, but it's totally worth the wait.",
+      "Prepare for a romantic dinner with your one true love: your bed. Netflix and chill, solo edition."
     ];
     const num = Math.floor(Math.random() * messages.length);
-    const selectedMessage = messages[num];
+    const selectedMessage = messages[num].replace(/\./g, '.\n');
     console.log(selectedMessage);
     setFortuneMessage(selectedMessage);
   };
@@ -39,7 +38,7 @@ function About() {
     setTimeout(() => {
       image.classList.remove("shake-animation");
       displayMessage();
-    }, 1000);
+    }, 500);
   };
 
   return (
