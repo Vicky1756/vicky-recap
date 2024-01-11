@@ -5,6 +5,7 @@ import "./Home.css";
 import { Container, Row, Col } from "react-bootstrap";
 import About from "../About/About";
 import Bingo from "../Bingo/Bingo";
+import Fortune from "../Fortune/Fortune";
 import Navbar from "./Navbar/Navbar";
 
 function Home() {
@@ -51,7 +52,9 @@ function Home() {
         </Container>
       </Container>
       <About />
+      <Fortune />
       <Bingo />
+    
     </section>
   );
 }

@@ -62,8 +62,8 @@ function Navbar() {
       <nav>
         <a href="#home">Home</a>
         <a href="#about">About</a>
+        <a href="#fortune">Fortune</a>
         <a href="#bingo">Bingo</a>
-        <a href="#html">HTML</a>
         <a href="#js">JS</a>
       </nav>
       <div className="scroller">
