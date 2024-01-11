@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./About.css";
+import fortuneImage from "../../Assets/fortune.png";
 
 function About() {
-  const [magic8Message, setMagic8Message] = useState("");
+  const [fortuneMessage, setFortuneMessage] = useState("");
 
   const displayMessage = () => {
     const messages = [
@@ -28,7 +29,17 @@ function About() {
     const num = Math.floor(Math.random() * messages.length);
     const selectedMessage = messages[num];
     console.log(selectedMessage);
-    setMagic8Message(selectedMessage);
+    setFortuneMessage(selectedMessage);
+  };
+
+  const handleFortuneClick = () => {
+    const image = document.getElementById("fortuneImage");
+    image.classList.add("shake-animation");
+
+    setTimeout(() => {
+      image.classList.remove("shake-animation");
+      displayMessage();
+    }, 1000);
   };
 
   return (
@@ -62,20 +73,20 @@ function About() {
           a home in their heart.
         </p>
       </div>
-      <div className="ball-content">
-        <div className="ball-heading">
-          <h1>Seeking Advice?</h1>
-          <h3>Click the Magic 8 Ball now!</h3>
+      <div className="fortune-content">
+        <div className="fortune-heading">
+          <h1>Wonder what is your future?</h1>
+          <h3>Click the Fortune sticks now!</h3>
         </div>
-        <div className="magic8Ball" id="magic8Ball">
+        <div className="fortuneStick" id="fortuneStick" onClick={handleFortuneClick}>
           <img
-            src="https://dl.dropboxusercontent.com/s/3s8proa5ixmgq5k/8ball.png"
-            alt="An eight ball"
+            src={fortuneImage}
+            alt="Fortune stick"
             width="400px"
-            onClick={displayMessage}
+            id="fortuneImage" 
           />
-          <div id="magic8ballMessage" className="magic8ballMessage">
-            {magic8Message}
+          <div id="fortuneStickMessage" className="fortuneStickMessage">
+            {fortuneMessage}
           </div>
         </div>
       </div>
