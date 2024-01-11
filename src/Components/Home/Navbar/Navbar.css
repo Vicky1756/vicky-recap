@@ -73,7 +73,6 @@ nav a:last-child {
 }
 
 nav a:hover {
-  /* background: linear-gradient(90deg, var(--sect1), var(--sect2), var(--sect3), var(--sect4), var(--sect5)); */
   background: linear-gradient(90deg, var(--clr) 0 50%, var(--black) 0 100%);
   background-size: 200%;
   background-position: 100% 0;
