@@ -1,0 +1,130 @@
+:root {
+  --orange: #FF9F1C;
+  --red: #E71D36;
+  --blue: #2EC4B6;
+  --paleblue: #80A1C1;
+  --green: #3D7A3B;
+  --cream: #F6D8AE;
+  --dark: #011627;
+  --light: #ACBDBA;
+  --boxborder: 6px;
+  --ballborder: 12px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+div.overrated {
+  font-size: 0.8em;
+  color: var(--dark);
+  text-align: center;
+
+}
+
+div.overrated a {
+  color: var(--dark);
+}
+
+div.overrated svg:hover {
+  background-color: var(--light);
+}
+
+div.overrated h3:hover {
+  background-color: var(--light);
+}
+
+div.overrated li img:hover {
+  border-color: var(--light);
+}
+
+div.overrated canvas {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100px;
+  height: 75px;
+}
+
+div.overrated .anarchy {
+  position: absolute;
+  visibility: hidden;
+}
+
+div.overrated img {
+  width: 200px;
+  height: 200px;
+  display: block;
+  border-radius: 100%;
+  border: var(--ballborder) solid var(--red);
+}
+
+div.overrated .photo img {
+  width: 120px;
+  height: 120px;
+  border: var(--ballborder) solid var(--orange);
+}
+
+#intro {
+  background-color: var(--orange);
+  font-size: 18px;
+  width: 180px;
+  padding: 10px;
+  font-family: 'Carter One', cursive;
+  font-size: 22px;
+  border: var(--boxborder) solid var(--dark);
+} 
+
+div.overrated h1 {
+  width: 320px;
+  height: 140px;
+  padding-top: 10px;
+  font-family: 'Modak', cursive;
+  font-size: 70px;
+  background-color: var(--orange);
+  border: var(--boxborder) solid var(--dark);
+}
+
+div.overrated h2 {
+  width: 150px;
+  height: 100px;
+  padding-top: 10px;
+  font-family: 'Modak', cursive;
+  font-size: 50px;
+  background-color: var(--orange);
+  border: var(--boxborder) solid var(--dark);
+}
+
+div.overrated h3 {
+  width: 200px;
+  padding-top: 10px;
+  font-family: 'Modak', cursive;
+  font-size: 40px;
+  background-color: var(--blue);
+  border: var(--boxborder) solid var(--dark);
+}
+
+div.overrated .smaller {
+  width: 240px;
+}
+
+div.overrated svg {
+  fill: var(--red);
+  background-color: var(--dark);
+  display: block;
+  border-radius: 100%;
+}
+
+div.overrated li>div {
+  background-color: var(--green);
+  width: 180px;
+  padding: 10px;
+  font-family: 'Carter One', cursive;
+  font-size: 14px;
+  border: var(--boxborder) solid var(--dark);
+}
+
+div.overrated p {
+  margin-bottom: 10px;
+} 
