@@ -18,7 +18,7 @@ function Home() {
 
   return (
     <section>
-       <Navbar />
+       {/* <Navbar /> */}
       <Container fluid className="home-section" id="home">
         <Container className="home-content">
           <div className="img_container">

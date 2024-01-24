@@ -38,13 +38,11 @@ div.overrated li img:hover {
   border-color: var(--light);
 }
 
-div.overrated canvas {
+body canvas {
   display: none;
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 100px;
-  height: 75px;
 }
 
 div.overrated .anarchy {
