@@ -4,6 +4,7 @@ import About from "./Components/About/About";
 import Bingo from "./Components/Bingo/Bingo";
 import Fortune from "./Components/Fortune/Fortune";
 import Overrated from "./Components/Overrated/Overrated";
+import Instagram from "./Components/Instagram/Instagram";
 import Preloader from "./Components/pre";
 import React, { useState, useEffect } from "react";
 import {
@@ -25,14 +26,15 @@ function App() {
   }, []);
   return (
     <Router>
-      <Preloader load={load} />
+      {/* <Preloader load={load} /> */}
       <div className="App" id={load ? "no-scroll" : "scroll"}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/bingo" element={<Bingo />} />
           <Route path="/fortune" element={<Fortune />} />
-          <Route path="/overatted" element={<Overrated />} />
+          <Route path="/overrated" element={<Overrated />} />
+          <Route path="/instagram" element={<Instagram />} />
         </Routes>
       </div>
     </Router>

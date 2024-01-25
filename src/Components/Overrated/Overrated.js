@@ -1,7 +1,7 @@
 import React from "react";
 import Matter from "matter-js";
 import "./Overrated.css";
-
+import fortunePic from "../../Assets/fortunePic.jpeg"
 function Overrated() {
   // module aliases
   var Engine = Matter.Engine,
@@ -154,7 +154,7 @@ function Overrated() {
   return (
     <div className="overrated">
       <h1 className="anarchy block prio1">Bogtopia</h1>
-      <h2 className="anarchy block prio1">2023</h2>
+      <h3 className="anarchy block prio1">try clicking on items</h3>
       <p id="intro" className="anarchy block prio1">
         Articles, code experiments and other non-work things.
       </p>
@@ -169,10 +169,9 @@ function Overrated() {
       <ul className="collection" id="css">
         <li>
           <a
-            href="https://codepen.io/andybarefoot/pen/ypPgod"
-            target="stackedCubes"
+            href="about"
           >
-            <h3 className="anarchy block prio2">Stacked Cubes</h3>
+            <h3 className="anarchy block prio2">Message to you</h3>
           </a>
           <a
             href="https://codepen.io/andybarefoot/pen/ypPgod"
@@ -238,14 +237,14 @@ function Overrated() {
           </div>
         </li>
         <li>
-          <a href="https://codepen.io/andybarefoot/pen/MERBPx" target="isoGrid">
-            <h3 className="anarchy block prio2">Isometric Layered Grid</h3>
+          <a href="fortune">
+            <h3 className="anarchy block prio2">Predict your future</h3>
           </a>
-          <a href="https://codepen.io/andybarefoot/pen/MERBPx" target="isoGrid">
+          <a href="fortune">
             <img
-              alt="isoGrid"
+              alt="fortune"
               className="anarchy ball prio2"
-              src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/isoGrid-300.jpg"
+              src={fortunePic}
             />
           </a>
           <div className="anarchy block prio2">
@@ -351,13 +350,12 @@ function Overrated() {
             <h3 className="anarchy block prio2">Image Squish with CSS Grid</h3>
           </a>
           <a
-            href="https://codepen.io/andybarefoot/pen/WXpKJV"
-            target="imageZoom"
+            href="bingo"
           >
             <img
               alt="imageZoom"
               className="anarchy ball prio2"
-              src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/squash-300.jpg"
+              src="https://ranklessthecomic.com/img/did-someone-say-bingo.jpg"
             />
           </a>
           <div className="anarchy block prio2">

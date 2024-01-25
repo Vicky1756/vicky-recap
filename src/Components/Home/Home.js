@@ -52,9 +52,9 @@ function Home() {
           </Row>
         </Container>
       </Container>
-      <About />
+      {/* <About />
       <Fortune />
-      <Bingo />
+      <Bingo /> */}
       <Overrated />
     
     </section>

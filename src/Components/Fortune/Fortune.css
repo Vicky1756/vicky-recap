@@ -2,6 +2,7 @@
 
 .fortune-content {
     color: #fff;
+    background-color: #ffc023;
     font-weight: bold;
     font-family: 'Gloria Hallelujah', cursive;
     flex-direction: column;
